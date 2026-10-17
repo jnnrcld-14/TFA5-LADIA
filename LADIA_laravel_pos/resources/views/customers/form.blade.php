@@ -1,0 +1,1 @@
+<label>Full Name<input name="full_name" value="{{ old('full_name', $customer->full_name ?? '') }}" required></label><label>Email<input type="email" name="email" value="{{ old('email', $customer->email ?? '') }}" required></label>

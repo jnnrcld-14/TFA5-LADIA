@@ -1,0 +1,3 @@
+@extends('layouts.app')
+@section('title', 'Tasks')
+@section('content')<section class="panel"><h1>Tasks for Today</h1><p>{{ now()->format('F j, Y') }}</p>@if($todayTasks->isEmpty())<p>No tasks scheduled for today.</p>@else<table><tr><th>Task</th><th>Status</th></tr>@foreach($todayTasks as $task)<tr><td>{{ $task->title }}</td><td>{{ ucfirst($task->status) }}</td></tr>@endforeach</table>@endif<h2>All Tasks</h2><table><tr><th>Date</th><th>Task</th><th>Status</th></tr>@foreach($tasks as $task)<tr><td>{{ $task->task_date->format('M j, Y') }}</td><td>{{ $task->title }}</td><td>{{ ucfirst($task->status) }}</td></tr>@endforeach</table></section>@endsection
